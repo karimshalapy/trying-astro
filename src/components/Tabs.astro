@@ -12,13 +12,15 @@ const { activeTextColor, content = [] } = Astro.props as Props;
 
 {
   !!content.length && (
-    <div class="tabs">
-      <ul class="tabs-header">
+    <div class="tabs mt-8">
+      <ul class="tabs-header flex bg-gray-800 text-white px-5 py-2">
         {content.map(({ heading }, i) => (
-          <li class={`${!i && "default-tab"}`}>{heading}</li>
+          <li class={`${!i && "default-tab"} mr-5 cursor-pointer`}>
+            {heading}
+          </li>
         ))}
       </ul>
-      <ul class="tabs-content">
+      <ul class="tabs-content text-lg p-5 border-gray-800 border  font-bold bg-slate-100">
         {content.map(({ code }) => (
           <li class="tab">
             <code>{code}</code>
@@ -65,29 +67,3 @@ const { activeTextColor, content = [] } = Astro.props as Props;
     createTabs(x, activeTextColor)
   );
 </script>
-
-<style>
-  .tabs {
-    margin-top: 30px;
-  }
-
-  .tabs-header {
-    display: flex;
-    background: #333;
-    color: #fff;
-    padding: 10px 20px;
-  }
-
-  .tabs-header li {
-    margin-right: 20px;
-    cursor: pointer;
-  }
-
-  .tabs-content {
-    font-size: 18px;
-    padding: 20px;
-    border: 1px solid #333;
-    font-weight: bold;
-    background: #f4f4f4;
-  }
-</style>
