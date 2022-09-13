@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import type { MarkdownInstance } from "astro";
+import Link from "../components/Link.astro";
 
 export async function getStaticPaths() {
   const posts = await Astro.glob("../posts/*.md");
@@ -24,7 +25,7 @@ const { Content, frontmatter } = Astro.props.post as MarkdownInstance<
   <section class="page-content">
     <div class="container">
       <Card>
-        <a href="/blog">Go Back</a>
+        <Link to="/blog">Go Back</Link>
         <h2>{frontmatter.title}</h2>
         <Content />
       </Card>

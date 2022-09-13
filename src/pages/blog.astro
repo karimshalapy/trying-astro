@@ -1,5 +1,6 @@
 ---
 import Card from "../components/Card.astro";
+import Link from "../components/Link.astro";
 import Showcase from "../components/Showcase.astro";
 import Layout from "../layouts/Layout.astro";
 
@@ -15,9 +16,9 @@ const posts = await Astro.glob("../posts/*.md");
           <Card>
             <h3>{post.frontmatter.title}</h3>
             <p>{post.frontmatter.excerpt}</p>
-            <a href={`/${post.frontmatter.slug}`} class="btn">
+            <Link to={`/${post.frontmatter.slug}`} class="btn">
               Read More
-            </a>
+            </Link>
           </Card>
         ))
       }
