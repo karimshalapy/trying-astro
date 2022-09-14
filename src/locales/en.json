@@ -1,0 +1,11 @@
+{
+  "site": {
+    "title": "Try Astro"
+  },
+  "nav": {
+    "about": "About",
+    "blog": "Blog",
+    "home": "Home"
+  },
+  "switchLang": "عربي"
+}

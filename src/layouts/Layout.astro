@@ -1,17 +1,21 @@
 ---
+import i18next, { t } from "i18next";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import HeadHrefLangs from "../components/HeadHrefLangs.astro";
 import "../stlyes/global.css";
+
+const { language } = i18next;
 
 export interface Props {
   title?: string;
 }
 
-const { title = "Astro Crash Course" } = Astro.props as Props;
+const { title } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={language} dir={language === "ar" ? "rtl" : ""}>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -22,7 +26,8 @@ const { title = "Astro Crash Course" } = Astro.props as Props;
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-    <title>{title}</title>
+    <HeadHrefLangs />
+    <title>{title || t("site.title")}</title>
   </head>
   <body>
     <Header />

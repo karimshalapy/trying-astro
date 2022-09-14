@@ -1,0 +1,11 @@
+{
+  "site": {
+    "title": "تجربة Astro"
+  },
+  "nav": {
+    "about": "عنا",
+    "blog": "مقالات",
+    "home": "الرئيسية"
+  },
+  "switchLang": "English"
+}

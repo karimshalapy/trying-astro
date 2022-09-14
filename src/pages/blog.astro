@@ -4,7 +4,7 @@ import Link from "../components/Link.astro";
 import Showcase from "../components/Showcase.astro";
 import Layout from "../layouts/Layout.astro";
 
-const posts = await Astro.glob("../posts/*.md");
+const posts = await Astro.glob("/src/posts/*.md");
 ---
 
 <Layout title="Astro Crash Course | Astro Blog">

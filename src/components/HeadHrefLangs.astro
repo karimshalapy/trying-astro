@@ -1,0 +1,20 @@
+---
+import i18next from "i18next";
+import { localizeUrl } from "../utils";
+
+const supportedLanguages = i18next.languages;
+const placeholderLang = import.meta.env.PLACEHOLDER_LANG;
+const currentUrl = Astro.url.href;
+---
+
+{
+  supportedLanguages
+    .filter((lang) => lang !== placeholderLang)
+    .map((supportedLanguage) => (
+      <link
+        rel="alternate"
+        hreflang={supportedLanguage}
+        href={localizeUrl(currentUrl, supportedLanguage)}
+      />
+    ))
+}

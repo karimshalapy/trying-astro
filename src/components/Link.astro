@@ -1,5 +1,8 @@
 ---
+import i18next from "i18next";
+
 const base = import.meta.env.BASE_URL;
+const { language } = i18next;
 
 type Props = astroHTML.JSX.HTMLAttributes & {
   to: string;
@@ -8,6 +11,6 @@ type Props = astroHTML.JSX.HTMLAttributes & {
 const { to, ...attrs } = Astro.props as Props;
 ---
 
-<a href={`${base}${to.substring(1)}`} {...attrs}>
+<a href={`${base}${language}${to}`} {...attrs}>
   <slot />
 </a>
