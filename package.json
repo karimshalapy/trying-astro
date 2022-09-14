@@ -8,7 +8,7 @@
     "build": "astro-i18next generate && astro build; npm run clean-up",
     "preview": "astro preview",
     "astro": "astro",
-    "clean-up": "rm -rf src/pages/ar && rm -rf src/pages/en && rm -rf dist/index.html && cd dist && find . -maxdepth 1 ! -name ar ! -name en ! -name assets ! -name chunks ! -name favicon.svg  -type d -exec rm -rf {} +"
+    "clean-up": "rm -rf src/pages/ar && rm -rf src/pages/en && rm -rf dist/index.html && find dist/* -maxdepth 1 ! -name ar ! -name en ! -name assets ! -name chunks ! -name favicon.svg  -type d -exec rm -rf {} +"
   },
   "dependencies": {
     "@astrojs/tailwind": "^1.0.0",
